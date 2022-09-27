@@ -29,8 +29,7 @@ def kaito(seikai):
         print("正解です。それでは、具体的に欠損文字を１つづつ入力してください")
         for i in range(num):
             c = input(f"{i+1}つ目の文字を入力してください：")
-            #型がおかしいので要検討
-            if c not in seikai:
+            if c not in seikai:#ここにミスがある
                 print("不正解です。またチャレンジしてください。")
                 return False
             else:
