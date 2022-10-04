@@ -27,36 +27,38 @@ class click_ev():#条件分岐をする
     def __init__(self):
         self.cal = tk.StringVar()
         self.var = tk.StringVar()
-        def cl_bn(self,event):
-            check = event.widget['text']
-            if check == '=':
-                if self.cal[-1:] in ope:
-                    self.cal = self.cal[:-1]
 
-                res = '=' + str(eval(self.cal)) 
-                self.var.set(res)
+#インデントの修正
+    def cl_bn(self,event):
+        check = event.widget['text']
+        if check == '=':
+            if self.cal[-1:] in ope:
+               self.cal = self.cal[:-1]
 
-            elif check == 'C':
-                self.cal = ''
-                self.var.set('')
+            res = '=' + str(eval(self.cal)) 
+            self.var.set(res)
+
+        elif check == 'C':
+            self.cal = ''
+            self.var.set('')
             
-            elif check == 'χ2':
-                self.cal *= self.cal
-                entry.delete(0, tk.END)
-                entry.insert(tk.END, res)
+        elif check == 'χ2':
+            self.cal *= self.cal
+            entry.delete(0, tk.END)
+            entry.insert(tk.END, res)
 
-            elif check == '16':
-                self.cal = hex(self.cal)
+        elif check == '16':
+            self.cal = hex(self.cal)
             
-            #elif check == 'P':
-                #えらとすてねすがはいる
+        #elif check == 'P':
+            #えらとすてねすがはいる
 
 
-            elif check in ope: 
-                if self.cal[-1:] not in ope and self.cal[-1:] != '':
-                    self.cal += check
-                elif self.cal[-1:] in ope:
-                    self.cal = self.cal[:-1] + check 
+        elif check in ope: 
+            if self.cal[-1:] not in ope and self.cal[-1:] != '':
+                self.cal += check
+            elif self.cal[-1:] in ope:
+                self.cal = self.cal[:-1] + check 
     
 """  
     eqn = entry.get()
