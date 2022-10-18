@@ -28,8 +28,7 @@ def goal():
     
 
 def main_proc():
-    global mx, my,tori
-    global cx, cy
+    global mx, my,tori,cx, cy
     tori = tk.PhotoImage(file = "fig/0.png")
     canv.create_image(cx,cy,image=tori,tag="tori")
     if key =="Up":
