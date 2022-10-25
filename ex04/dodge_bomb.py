@@ -1,7 +1,6 @@
 import pygame as pg
 import sys
 from random import randint
-import time
 
 
 
@@ -39,14 +38,12 @@ def koukaton_attack():
     
 
 def count_k():
-    global  time_sta
     fonto =pg.font.Font(None,80)
     tmr = "GAME OVER"
     txt =fonto.render(str(tmr),True,"RED")
     scr_sfc.blit(txt,(300,200))
-    time.sleep(1)
-    time_end = time.time()
-    tim = time_end- time_sta
+    pg.time.Clock.tick()
+    tim = pg.time.Clock.get_time()
     tk =fonto.render(str(tim),True,"BLACK")
     scr_sfc.blit(tk,(1000,600))
     koukaton_attack()
@@ -54,6 +51,7 @@ def count_k():
 
 
 def main():
+    pg.time.get_ticks()
     global scr_sfc,toriki
     pg.display.set_caption("逃げろ！こうかとん")
     scr_sfc = pg.display.set_mode((1600,900))
@@ -122,7 +120,6 @@ if __name__ == "__main__":
     scr_sfc = pg.display.set_mode((1600,900))
     toriki = pg.image.load("fig/6.png")
     toriki_zoku = toriki.get_rect()
-    time_sta = time.time()
     main()
     pg.quit()
     sys.exit()
