@@ -15,23 +15,6 @@ def check_bound(obj_rct,scrn_rct):#obj_rctこうかとんor爆弾rect
     return yoko, tate
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def koukaton_attack():
     global scr_sfc,toriki_zoku
     bakushi = pg.image.load("fig/8.png")
