@@ -121,9 +121,6 @@ class Shot():
         scr.sfc.blit(self.sfc,self.rct)
         self.blit(scr) 
 
-        
-
-
 
 def check_bound(obj_rct, scr_rct):
     """
