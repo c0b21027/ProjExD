@@ -100,7 +100,7 @@ class Alien(pg.sprite.Sprite):
         self.image = self.images[self.frame // self.animcycle % 3]
 
 class Shot():
-    #戦うこうかとん、放火とん
+    #戦うこうかとん
     def __init__(self,image,chr:Bird,key):
         self.sfc=pg.image.load(image)
         self.sfc = pg.transform.rotozoom(self,0,0.1)
